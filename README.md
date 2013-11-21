@@ -10,3 +10,6 @@ php-functions
 7) force file download<br />
 8) make http links clickable<br />
 9) replace multiple whitespaces with 1 space
+
+
+NOTE: not all functions are made by me
