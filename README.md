@@ -13,3 +13,5 @@ php-functions
 
 
 NOTE: not all functions are made by me
+--
+remove eregi
