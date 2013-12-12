@@ -22,7 +22,19 @@ function stripExcessWhitespace( $string ) {return preg_replace( '/  +/', ' ', $s
 //usage: download('test.txt', 'Text thats getting downloaded')
 //returns: file
 function download(filename, text,meme,save){if (typeof meme === "undefined"){meme='data:text/plain;charset=utf-8,';}else{meme= 'data:' + meme + ';'}if(window.chrome){var dalink = document.createElement('a');dalink.setAttribute('href', meme + encodeURIComponent(text));dalink.setAttribute('id', 'JamieScott');dalink.setAttribute('download', filename);dalink.click();/*document.body.appendChild(dalink);*/}else{ if (typeof save === "undefined"){var blobObject = new Blob([text]);window.navigator.msSaveBlob(blobObject, filename);alert('File save request made using msSaveBlob() - note the single "Save" button below.');}else{ var fileData = [text]; blobObject = new Blob(fileData); window.navigator.msSaveOrOpenBlob(blobObject, filename);  }}}
-
+function createcode($length = 12) {
+  $chars = "!#abcdefghijklmnopqrstuvwxyz
+            ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
+  srand((double)microtime()*1000000);
+  $i = 0; // 
+  while ($i < $length) { 
+    $num = rand() % strlen($chars);
+    $tmp = substr($chars, $num, 1);
+    $pass = $pass . $tmp;
+    $i++;
+  }
+  return $pass;
+}
 
 
 
